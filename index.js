@@ -80,27 +80,27 @@ app.get("/search", async (req,res)=>{
 });
 
 
-// app.post("/addBook", async (req,res)=>{
+app.post("/addBook", async (req,res)=>{
   
-//   try{
-//     //Book data
-//       const { title, author, isbn, rating,readDate,details, review, summary } = req.body;
-//       if(!readDate){
-//         const readDate = new Date()
-//         const formattedDate = readDate.toISOString().split('T')[0]
-//       }
-//       const readdate = new Date()
-//       const formattedDate = readdate.toISOString().split('T')[0]
+  try{
+    //Book data
+      const { title, author, isbn, rating,readDate,details, review, summary } = req.body;
+      if(!readDate){
+        const readDate = new Date()
+        const formattedDate = readDate.toISOString().split('T')[0]
+      }
+      const readdate = new Date()
+      const formattedDate = readdate.toISOString().split('T')[0]
 
-//   //Adding new book
-//     await db.query("INSERT INTO books (title, author, isbn, rating, readdate, details, review, sumary) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)", [title, author, isbn, rating, formattedDate, details, review, summary])
-//     res.status(200).send("book has been added")
-//   }catch(err){
-//     console.log(err);
-//     res.status(404).send("Server error")
-//   }
+  //Adding new book
+    await db.query("INSERT INTO books (title, author, isbn, rating, readdate, details, review, sumary) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)", [title, author, isbn, rating, formattedDate, details, review, summary])
+    res.status(200).send("book has been added")
+  }catch(err){
+    console.log(err);
+    res.status(404).send("Server error")
+  }
   
-// });
+});
 
 app.listen(port, ()=>{
     console.log("server is runing on port " + port)
