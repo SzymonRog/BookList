@@ -29,8 +29,8 @@ async function checkBooks(order) {
   if(order == "title"){
     dirOrder = "asc"
   }
-  console.log(order, dirOrder)
-  let result =  await db.query(`select id, title, author, rating, readdate, details from books order by ${order} ${dirOrder};`)
+  
+  let result =  await db.query(`select id, title, author, rating, readdate, details, isbn from books order by ${order} ${dirOrder};`)
   return result.rows
 }
 async function checkBookDetails(isbn) {
@@ -43,13 +43,28 @@ async function searchBooks(query) {
   return result.rows
 }
 
+function formatDate(date) {
+  return date.toISOString().split('T')[0]; // np. "2024-04-22"
+}
+
+// testing styles
+app.get("/", (req,res)=>{
+  res.render("books.ejs")
+});
+
 // show all boks
 app.get("/books", async (req,res)=>{
   try{
     const order = req.query.order || 'title'
-    let books = await checkBooks(order);
-    console.log(books);
-    res.send(books)
+    let noFormatedBooks = await checkBooks(order);
+
+    const books = noFormatedBooks.map(book => ({
+      ...book,
+      formattedDate: formatDate(book.readdate)
+    }));
+    res.render("books.ejs",{
+      Books: books
+    })
   }catch(err){
     console.log(err)
     res.status(404).send("Database error")
@@ -57,7 +72,7 @@ app.get("/books", async (req,res)=>{
     
 });
 // change order by (title,rating,latest)
-app.get("/order", async (req,res)=>{
+app.post("/order", async (req,res)=>{
   try{
     let order = req.body.order
     res.redirect(`/books?order=${order}`)
@@ -75,7 +90,7 @@ app.get("/book/:isbn", async (req,res)=>{
     if(book.length === 0){
       res.status(404).send("No book with this ISBN")
     }
-    console.log(book);
+    
     res.send(book);
   }catch(err){
     console.log(err);
@@ -91,7 +106,7 @@ app.post("/search", async (req,res)=>{
     if(book.length === 0){
       res.status(404).send("No book matches criteria")
     }
-    console.log(book);
+    
     res.send(book);
   }catch(err){
     console.log(err);
@@ -137,7 +152,8 @@ app.post("/editBook", async (req,res)=>{
 });
 
 // Delete Book
-app.post("/deleteBook/:isbn", async (req,res)=>{
+app.post("/deleteBook/:isbn", async (req,res) =>
+{
   
   try{
     const isbn = req.params.isbn

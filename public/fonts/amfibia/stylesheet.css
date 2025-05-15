@@ -1,0 +1,240 @@
+@font-face {
+    font-family: 'Amfibia Book';
+    src: url('Amfibia-Book.eot');
+    src: local('Amfibia Book'), local('Amfibia-Book'),
+        url('Amfibia-Book.eot?#iefix') format('embedded-opentype'),
+        url('Amfibia-Book.woff2') format('woff2'),
+        url('Amfibia-Book.woff') format('woff'),
+        url('Amfibia-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Amfibia';
+    src: url('Amfibia-Thin.eot');
+    src: local('Amfibia Thin'), local('Amfibia-Thin'),
+        url('Amfibia-Thin.eot?#iefix') format('embedded-opentype'),
+        url('Amfibia-Thin.woff2') format('woff2'),
+        url('Amfibia-Thin.woff') format('woff'),
+        url('Amfibia-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Amfibia';
+    src: url('Amfibia-ThinItalic.eot');
+    src: local('Amfibia Thin Italic'), local('Amfibia-ThinItalic'),
+        url('Amfibia-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('Amfibia-ThinItalic.woff2') format('woff2'),
+        url('Amfibia-ThinItalic.woff') format('woff'),
+        url('Amfibia-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Amfibia Hairline';
+    src: url('Amfibia-HairlineItalic.eot');
+    src: local('Amfibia Hairline Italic'), local('Amfibia-HairlineItalic'),
+        url('Amfibia-HairlineItalic.eot?#iefix') format('embedded-opentype'),
+        url('Amfibia-HairlineItalic.woff2') format('woff2'),
+        url('Amfibia-HairlineItalic.woff') format('woff'),
+        url('Amfibia-HairlineItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Amfibia';
+    src: url('Amfibia-DemiBoldItalic.eot');
+    src: local('Amfibia DemiBold Italic'), local('Amfibia-DemiBoldItalic'),
+        url('Amfibia-DemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Amfibia-DemiBoldItalic.woff2') format('woff2'),
+        url('Amfibia-DemiBoldItalic.woff') format('woff'),
+        url('Amfibia-DemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Amfibia Book';
+    src: url('Amfibia-BookItalic.eot');
+    src: local('Amfibia Book Italic'), local('Amfibia-BookItalic'),
+        url('Amfibia-BookItalic.eot?#iefix') format('embedded-opentype'),
+        url('Amfibia-BookItalic.woff2') format('woff2'),
+        url('Amfibia-BookItalic.woff') format('woff'),
+        url('Amfibia-BookItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Amfibia UltraThin';
+    src: url('Amfibia-UltraThinItalic.eot');
+    src: local('Amfibia UltraThin Italic'), local('Amfibia-UltraThinItalic'),
+        url('Amfibia-UltraThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('Amfibia-UltraThinItalic.woff2') format('woff2'),
+        url('Amfibia-UltraThinItalic.woff') format('woff'),
+        url('Amfibia-UltraThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Amfibia';
+    src: url('Amfibia-BlackItalic.eot');
+    src: local('Amfibia Black Italic'), local('Amfibia-BlackItalic'),
+        url('Amfibia-BlackItalic.eot?#iefix') format('embedded-opentype'),
+        url('Amfibia-BlackItalic.woff2') format('woff2'),
+        url('Amfibia-BlackItalic.woff') format('woff'),
+        url('Amfibia-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Amfibia';
+    src: url('Amfibia-Black.eot');
+    src: local('Amfibia Black'), local('Amfibia-Black'),
+        url('Amfibia-Black.eot?#iefix') format('embedded-opentype'),
+        url('Amfibia-Black.woff2') format('woff2'),
+        url('Amfibia-Black.woff') format('woff'),
+        url('Amfibia-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Amfibia';
+    src: url('Amfibia-LightItalic.eot');
+    src: local('Amfibia Light Italic'), local('Amfibia-LightItalic'),
+        url('Amfibia-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('Amfibia-LightItalic.woff2') format('woff2'),
+        url('Amfibia-LightItalic.woff') format('woff'),
+        url('Amfibia-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Amfibia Hairline';
+    src: url('Amfibia-Hairline.eot');
+    src: local('Amfibia Hairline'), local('Amfibia-Hairline'),
+        url('Amfibia-Hairline.eot?#iefix') format('embedded-opentype'),
+        url('Amfibia-Hairline.woff2') format('woff2'),
+        url('Amfibia-Hairline.woff') format('woff'),
+        url('Amfibia-Hairline.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Amfibia';
+    src: url('Amfibia-ExtraBold.eot');
+    src: local('Amfibia ExtraBold'), local('Amfibia-ExtraBold'),
+        url('Amfibia-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('Amfibia-ExtraBold.woff2') format('woff2'),
+        url('Amfibia-ExtraBold.woff') format('woff'),
+        url('Amfibia-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Amfibia';
+    src: url('Amfibia-BoldItalic.eot');
+    src: local('Amfibia Bold Italic'), local('Amfibia-BoldItalic'),
+        url('Amfibia-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Amfibia-BoldItalic.woff2') format('woff2'),
+        url('Amfibia-BoldItalic.woff') format('woff'),
+        url('Amfibia-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Amfibia';
+    src: url('Amfibia-RegularItalic.eot');
+    src: local('Amfibia Regular Italic'), local('Amfibia-RegularItalic'),
+        url('Amfibia-RegularItalic.eot?#iefix') format('embedded-opentype'),
+        url('Amfibia-RegularItalic.woff2') format('woff2'),
+        url('Amfibia-RegularItalic.woff') format('woff'),
+        url('Amfibia-RegularItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Amfibia';
+    src: url('Amfibia-ExtraBoldItalic.eot');
+    src: local('Amfibia ExtraBold Italic'), local('Amfibia-ExtraBoldItalic'),
+        url('Amfibia-ExtraBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('Amfibia-ExtraBoldItalic.woff2') format('woff2'),
+        url('Amfibia-ExtraBoldItalic.woff') format('woff'),
+        url('Amfibia-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Amfibia';
+    src: url('Amfibia-Regular.eot');
+    src: local('Amfibia Regular'), local('Amfibia-Regular'),
+        url('Amfibia-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Amfibia-Regular.woff2') format('woff2'),
+        url('Amfibia-Regular.woff') format('woff'),
+        url('Amfibia-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Amfibia';
+    src: url('Amfibia-DemiBold.eot');
+    src: local('Amfibia DemiBold'), local('Amfibia-DemiBold'),
+        url('Amfibia-DemiBold.eot?#iefix') format('embedded-opentype'),
+        url('Amfibia-DemiBold.woff2') format('woff2'),
+        url('Amfibia-DemiBold.woff') format('woff'),
+        url('Amfibia-DemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Amfibia';
+    src: url('Amfibia-Light.eot');
+    src: local('Amfibia Light'), local('Amfibia-Light'),
+        url('Amfibia-Light.eot?#iefix') format('embedded-opentype'),
+        url('Amfibia-Light.woff2') format('woff2'),
+        url('Amfibia-Light.woff') format('woff'),
+        url('Amfibia-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Amfibia';
+    src: url('Amfibia-Bold.eot');
+    src: local('Amfibia Bold'), local('Amfibia-Bold'),
+        url('Amfibia-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Amfibia-Bold.woff2') format('woff2'),
+        url('Amfibia-Bold.woff') format('woff'),
+        url('Amfibia-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Amfibia UltraThin';
+    src: url('Amfibia-UltraThin.eot');
+    src: local('Amfibia UltraThin'), local('Amfibia-UltraThin'),
+        url('Amfibia-UltraThin.eot?#iefix') format('embedded-opentype'),
+        url('Amfibia-UltraThin.woff2') format('woff2'),
+        url('Amfibia-UltraThin.woff') format('woff'),
+        url('Amfibia-UltraThin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+

@@ -4,6 +4,4 @@
 @tailwind components;
 @tailwind utilities;
 
-.firstTry{
-    background-color: aqua;
-}
+@import url("fonts/amfibia/stylesheet.css")
