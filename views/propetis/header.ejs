@@ -1,21 +1,21 @@
-<div class="flex h-[125px] items-center justify-between px-[160px] mb-[75px] mt-7">
+<div class="flex h-[125px] items-center justify-between px-[160px] mb-[75px] mt-7 z-10">
     <div id="sorting-nav">
-        <form action="/order" method="POST" class="flex flex-row gap-15 items-center">
+        <form action="/order" method="POST" class="flex flex-row gap-15 items-center z-10">
             <p class="text-[20px] font-[Inter] font-extralight">Sorted by</p>
-            <button type="submit" name="order" value="rating" class="text-[24px] font-[Inter] font-light hover:font-semibold relative"><span class="invisible block font-semibold opacity-0 pointer-events-none select-none">Rating</span>
+            <button id="rating" type="submit" name="order" value="rating" class="sort-btn text-[24px] font-[Inter] font-light hover:font-semibold relative"><span class="invisible block font-semibold opacity-0 pointer-events-none select-none">Rating</span>
             <span class="absolute left-0 top-0">Rating</span>
             </button>
-            <button type="submit" name="order" value="readdate" class="text-[24px] font-[Inter] font-light hover:font-semibold relative">
+            <button id="date" type="submit" name="order" value="readdate" class=" sort-btn text-[24px] font-[Inter] font-light hover:font-semibold relative">
                 <span class="invisible block font-semibold opacity-0 pointer-events-none select-none">Latest</span>
                 <span class="absolute left-0 top-0">Latest</span>
             </button>
-            <button type="submit" name="order" value="title" class="text-[24px] font-[Inter] font-light hover:font-semibold relative">
+            <button id="title" type="submit" name="order" value="title" class=" sort-btn text-[24px] font-[Inter] font-light hover:font-semibold relative">
                 <span class="invisible block font-semibold opacity-0 pointer-events-none select-none">Title</span>
                 <span class="absolute left-0 top-0">Title</span>
             </button>
         </form>
     </div>
-    <div id="searchBar" class="bg-white border-solid border-1 rounded-[25px] h-[61px] w-[305px]">
+    <div id="searchBar" class="bg-white border-solid border-1 rounded-[25px] h-[61px] w-[305px] z-10">
         <form action="/search" method="POST" class="flex h-full items-center justify-items-center">
             <input type="text" id="searchBar" class="focus:outline-none p-1 pl-5 w-full h-full text-[24px]" name="search" required>
             <button type="submit" class="pr-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[35px] h-[35px] h-full">

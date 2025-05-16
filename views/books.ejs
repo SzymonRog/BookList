@@ -12,16 +12,16 @@
     <link rel="stylesheet" href="/styles/output.css">
 </head>
 
-<body class="bg-[#F2FEE1] relative ">
+<body class="bg-[#F2FEE1] relative">
     <!-- texture -->
-    <!-- <div class="pointer-events-none fixed inset-0 bg-[url('/images/cardboard.png')] opacity-10 mix-blend-multiply z-0"></div> -->
+    <div class="pointer-events-none fixed inset-0 opacity-50 mix-blend-multiply z-0" style="background-image: url(/images/cardboard.png); background-repeat: repeat;"></div>
 
-    <main class="z-1">
+    <main class="">
         <%- include("propetis/header.ejs") %>
             <section id="Books-display">
                 <div class="flex flex-col">
                     <% for(let i=0; i < Books.length; i++){ %>
-                        <div id="Book-display" class="flex gap-[57px] ml-[160px] mb-[140px] max-w-1100px">
+                        <div id="Book-display" class="flex gap-[57px] ml-[160px] mb-[140px] max-w-1100px z-10">
                             <div id="Book-cover">
                                 <img class="rounded-[10px] h-[500px] w-[316px] object-cover"
                                     src="https://covers.openlibrary.org/b/isbn/<%= Books[i].isbn %>-L.jpg" />
@@ -29,13 +29,53 @@
                             </div>
                             <div id="Book-info" class="w-[700px]">
                                 <h2
-                                    class="font-[amfibia] text-[#FF9D23] font-extrabold text-[36px] tracking-[0.05em] mb-3">
+                                    class="font-[amfibia] text-[#FF9D23] font-extrabold text-[36px] tracking-[0.05em] mb-[12px]">
                                     <%= Books[i].title %>
                                 </h2>
-                                <p class="font-[inter] text-[#4C4C4C] text-[20px] mb-3">Author: <%= Books[i].author %>,
+                                <p class="font-[inter] text-[#4C4C4C] text-[20px] mb-[22px]">Author: <%= Books[i].author %>,
                                         Date: <%= Books[i].formattedDate %>
                                 </p>
-                                <div id="rating" class="mb-3">
+                                <div id="rating" class="mb-3 relative">
+                                    <div class="stars-gray flex gap-[2px] text-gray-300 max-w-[163px]">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="#D9D9D9" viewBox="0 0 24 24" stroke-width="0" stroke="currentColor" class="   min-w-[31px] min-h-[31px]">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="#D9D9D9" viewBox="0 0 24 24" stroke-width="0" stroke="currentColor" class="   min-w-[31px] min-h-[31px]">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="#D9D9D9" viewBox="0 0 24 24" stroke-width="0" stroke="currentColor" class="   min-w-[31px] min-h-[31px]">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="#D9D9D9" viewBox="0 0 24 24" stroke-width="0" stroke="currentColor" class="   min-w-[31px] min-h-[31px]">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="#D9D9D9" viewBox="0 0 24 24" stroke-width="0" stroke="currentColor" class="   min-w-[31px] min-h-[31px]">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                                        </svg>
+                                    </div>
+                                        <!-- 5 szarych gwiazdek (fill none, stroke currentColor) -->
+                                      
+                                    <div id="gold-stars" class="gold-stars absolute top-0 left-0 overflow-hidden z-10 shrink-0" style="width: 0;" data-rating="<%= Books[i].rating %>">
+                                        <div class="flex gap-[2px] shrink-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="#FF9D23" viewBox="0 0 24 24" stroke-width="0" stroke="currentColor" class="  min-w-[31px] min-h-[31px]">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="#FF9D23" viewBox="0 0 24 24" stroke-width="0" stroke="currentColor" class="   min-w-[31px] min-h-[31px]">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="#FF9D23" viewBox="0 0 24 24" stroke-width="0" stroke="currentColor" class="   min-w-[31px] min-h-[31px]">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="#FF9D23" viewBox="0 0 24 24" stroke-width="0" stroke="currentColor" class="   min-w-[31px] min-h-[31px]">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="#FF9D23" viewBox="0 0 24 24" stroke-width="0" stroke="currentColor" class="   min-w-[31px] min-h-[31px]">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
+                                            </svg>
+                                        </div>
+                                        
+                                    </div>
+                                    
 
                                 </div>
                                 <div id="Book-details">
@@ -50,6 +90,18 @@
             </section>
     </main>
     <script src="js/script.js"></script>
+    <script>
+        function setRatings() {
+        const starsElements = document.querySelectorAll('.gold-stars');
+        starsElements.forEach(el => {
+        const rating = parseFloat(el.dataset.rating);
+        const percent = Math.max(0, Math.min(rating, 5)) / 5 * 163;
+        el.style.width = percent + 'px';
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', setRatings);
+    </script>
 </body>
 
 </html>
