@@ -39,12 +39,19 @@ async function checkBookDetails(isbn) {
 }
 
 async function searchBooks(query) {
-  let result =  await db.query("select * from books where ISBN like $1 or title like $2 or author like $3", [query,`%${query}%`,`%${query}%`])
+  let result =  await db.query("select * from books where ISBN like $1 or title like $2 or author like $3 order by rating desc", [query,`%${query}%`,`%${query}%`])
   return result.rows
 }
 
 function formatDate(date) {
   return date.toISOString().split('T')[0]; // np. "2024-04-22"
+}
+function formatBooks(books){
+  return books.map(book =>({
+    ...book,
+    formattedDate: formatDate(book.readdate)
+  }));
+  
 }
 
 // testing styles
@@ -57,11 +64,7 @@ app.get("/books", async (req,res)=>{
   try{
     const order = req.query.order || 'title'
     let noFormatedBooks = await checkBooks(order);
-
-    const books = noFormatedBooks.map(book => ({
-      ...book,
-      formattedDate: formatDate(book.readdate)
-    }));
+    let books = await formatBooks(noFormatedBooks)
     res.render("books.ejs",{
       Books: books
     })
@@ -83,15 +86,29 @@ app.post("/order", async (req,res)=>{
 });
 
 // show book details
-app.get("/book/:isbn", async (req,res)=>{
+app.get("/book", async (req,res)=>{
   try{
-    const isbn = req.params.isbn;
-    let book = await checkBookDetails(isbn);
-    if(book.length === 0){
+    const isbn = req.query.isbn;
+    let noFormatedBook = await checkBookDetails(isbn);
+    
+    if(noFormatedBook.length === 0){
       res.status(404).send("No book with this ISBN")
     }
-    
-    res.send(book);
+
+    let book = await formatBooks(noFormatedBook)
+
+    res.render("book.ejs",{
+      Book:book
+    });
+  }catch(err){
+    console.log(err);
+    res.status(404).send("Database error")
+  } 
+});
+
+app.get("/admin", async (req,res)=>{
+  try{
+    res.render("admin.ejs")
   }catch(err){
     console.log(err);
     res.status(404).send("Database error")
@@ -102,12 +119,14 @@ app.get("/book/:isbn", async (req,res)=>{
 app.post("/search", async (req,res)=>{
   try{
     const searchQuery  = req.body.search;
-    let book = await searchBooks(searchQuery);
-    if(book.length === 0){
+    let noFormatedBooks = await searchBooks(searchQuery);
+    if(noFormatedBooks.length === 0){
       res.status(404).send("No book matches criteria")
     }
-    
-    res.send(book);
+    const books = formatBooks(noFormatedBooks);
+    res.render("books.ejs",{
+      Books:books
+    })
   }catch(err){
     console.log(err);
     res.status(404).send("Database error")

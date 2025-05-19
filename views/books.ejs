@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/styles/output.css">
 </head>
 
-<body class="bg-[#F2FEE1] relative">
+<body class="bg-[#FEF9E1] relative">
     <!-- texture -->
     <div class="pointer-events-none fixed inset-0 opacity-50 mix-blend-multiply z-0" style="background-image: url(/images/cardboard.png); background-repeat: repeat;"></div>
 
@@ -21,7 +21,7 @@
             <section id="Books-display">
                 <div class="flex flex-col">
                     <% for(let i=0; i < Books.length; i++){ %>
-                        <div id="Book-display" class="flex gap-[57px] ml-[160px] mb-[140px] max-w-1100px z-10">
+                        <div id="Book-display" class="flex gap-[57px] ml-[160px] mb-[140px] max-w-1100px z-10 max-h-[500px]">
                             <div id="Book-cover">
                                 <img class="rounded-[10px] h-[500px] w-[316px] object-cover"
                                     src="https://covers.openlibrary.org/b/isbn/<%= Books[i].isbn %>-L.jpg" />
@@ -33,7 +33,7 @@
                                     <%= Books[i].title %>
                                 </h2>
                                 <p class="font-[inter] text-[#4C4C4C] text-[20px] mb-[22px]">Author: <%= Books[i].author %>,
-                                        Date: <%= Books[i].formattedDate %>
+                                        Date: <%= Books[i].formattedDate %>, ISBN: <%= Books[i].isbn %>
                                 </p>
                                 <div id="rating" class="mb-3 relative">
                                     <div class="stars-gray flex gap-[2px] text-gray-300 max-w-[163px]">
@@ -79,9 +79,13 @@
 
                                 </div>
                                 <div id="Book-details">
-                                    <p class="font-[inter] text-black text-[24px] leading-10 tracking-[1.1px]">
+                                    <p class="font-[inter] text-black text-[24px] leading-10 tracking-[1.1px] mb-[30px] whitespace-pre-line truncate max-h-[250px] w-full">
                                         <%= Books[i].details %>
                                     </p>
+                                    <form action="/book" method="GET" class="items-center">
+                                        <input type="hidden" name="isbn" value="<%= Books[i].isbn %>">
+                                        <button type="submit" class="bg-[#C14600] w-[180px] h-[60px] rounded-[50px] flex items-center justify-center hover:scale-[1.05]"><span class="relative top-[-4px] leading-none text-white text-[24px] font-[amfibia] font-bold text-center">Read More</span></button>
+                                    </form>
                                 </div>
                             </div>
                         </div>

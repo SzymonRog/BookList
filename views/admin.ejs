@@ -1,11 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Book List</title>
-        <link rel="stylesheet" href="/styles/output.css">
-    </head>
-    <body class="firstTry">
-        <h1 class="text-red-500 text-[64px]">Hello</h1>
-    </body>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/styles/output.css">
+</head>
+
+<body class="bg-[#FEF9E1] relative">
+    <!-- texture -->
+    <div class="pointer-events-none fixed inset-0 opacity-50 mix-blend-multiply z-0" style="background-image: url(/images/cardboard.png); background-repeat: repeat;"></div>
+
+    <main class="">
+        <section>
+            <div class="ml-[40px] mt-[20px]">
+                <div>
+                    <h1 class="font-[amfibia] text-[#FF9D23] font-extrabold text-[36px] tracking-[0.05em] mb-[12px] whitespace-pre-line mb-[30px]">
+                        Hey, Szymon
+                        What you want to do today ??
+                    </h1>
+                </div>
+                <div class="flex flex-col gap-[30px]">
+                    <button type="button" class="bg-[#FF9D23] w-[200px] h-[60px] rounded-[50px] flex items-center justify-center hover:scale-[1.05] leading-none text-white text-[24px] font-[amfibia] font-bold text-center">Edit book data</button>
+                    <button type="button" class="bg-[#FF9D23] w-[200px] h-[60px] rounded-[50px] flex items-center justify-center hover:scale-[1.05] leading-none text-white text-[24px] font-[amfibia] font-bold text-center">Add new book</button>
+                    <button type="button" class="bg-[#C14600] w-[200px] h-[60px] rounded-[50px] flex items-center justify-center hover:scale-[1.05] leading-none text-white text-[24px] font-[amfibia] font-bold text-center">Delete Book</button>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+
 </html>

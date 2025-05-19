@@ -17,7 +17,7 @@
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --font-weight-extrabold: 800;
-    --tracking-wide: 0.025em;
+    --leading-normal: 1.5;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -202,17 +202,14 @@
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
+  .top-\[-4px\] {
+    top: -4px;
+  }
   .left-0 {
     left: calc(var(--spacing) * 0);
   }
   .z-0 {
     z-index: 0;
-  }
-  .z-1 {
-    z-index: 1;
-  }
-  .z-2 {
-    z-index: 2;
   }
   .z-10 {
     z-index: 10;
@@ -220,14 +217,38 @@
   .mt-7 {
     margin-top: calc(var(--spacing) * 7);
   }
+  .mt-\[20px\] {
+    margin-top: 20px;
+  }
+  .mt-\[50px\] {
+    margin-top: 50px;
+  }
+  .mt-\[100px\] {
+    margin-top: 100px;
+  }
+  .mr-\[4em\] {
+    margin-right: 4em;
+  }
   .mb-3 {
     margin-bottom: calc(var(--spacing) * 3);
   }
   .mb-\[12px\] {
     margin-bottom: 12px;
   }
+  .mb-\[15px\] {
+    margin-bottom: 15px;
+  }
   .mb-\[22px\] {
     margin-bottom: 22px;
+  }
+  .mb-\[30px\] {
+    margin-bottom: 30px;
+  }
+  .mb-\[50px\] {
+    margin-bottom: 50px;
+  }
+  .mb-\[70px\] {
+    margin-bottom: 70px;
   }
   .mb-\[75px\] {
     margin-bottom: 75px;
@@ -235,8 +256,41 @@
   .mb-\[140px\] {
     margin-bottom: 140px;
   }
+  .ml-\[4em\] {
+    margin-left: 4em;
+  }
+  .ml-\[4vem\] {
+    margin-left: 4vem;
+  }
+  .ml-\[40px\] {
+    margin-left: 40px;
+  }
   .ml-\[160px\] {
     margin-left: 160px;
+  }
+  .line-clamp-3 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+  .line-clamp-6 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+  }
+  .line-clamp-7 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 7;
+  }
+  .line-clamp-10 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 10;
   }
   .block {
     display: block;
@@ -244,21 +298,17 @@
   .flex {
     display: flex;
   }
+  .hidden {
+    display: none;
+  }
   .table {
     display: table;
   }
-  .size-6 {
-    width: calc(var(--spacing) * 6);
-    height: calc(var(--spacing) * 6);
-  }
-  .h-100 {
-    height: calc(var(--spacing) * 100);
-  }
-  .h-\[31px\] {
-    height: 31px;
-  }
   .h-\[35px\] {
     height: 35px;
+  }
+  .h-\[60px\] {
+    height: 60px;
   }
   .h-\[61px\] {
     height: 61px;
@@ -272,17 +322,26 @@
   .h-full {
     height: 100%;
   }
+  .max-h-\[250px\] {
+    max-height: 250px;
+  }
+  .max-h-\[500px\] {
+    max-height: 500px;
+  }
   .min-h-\[31px\] {
     min-height: 31px;
   }
   .w-100 {
     width: calc(var(--spacing) * 100);
   }
-  .w-\[31px\] {
-    width: 31px;
-  }
   .w-\[35px\] {
     width: 35px;
+  }
+  .w-\[180px\] {
+    width: 180px;
+  }
+  .w-\[200px\] {
+    width: 200px;
   }
   .w-\[305px\] {
     width: 305px;
@@ -296,14 +355,11 @@
   .w-full {
     width: 100%;
   }
-  .max-w-\[140px\] {
-    max-width: 140px;
-  }
-  .max-w-\[162px\] {
-    max-width: 162px;
-  }
   .max-w-\[163px\] {
     max-width: 163px;
+  }
+  .max-w-\[1100px\] {
+    max-width: 1100px;
   }
   .min-w-\[31px\] {
     min-width: 31px;
@@ -326,6 +382,9 @@
   .justify-between {
     justify-content: space-between;
   }
+  .justify-center {
+    justify-content: center;
+  }
   .justify-items-center {
     justify-items: center;
   }
@@ -335,11 +394,19 @@
   .gap-\[2px\] {
     gap: 2px;
   }
-  .gap-\[5px\] {
-    gap: 5px;
+  .gap-\[30px\] {
+    gap: 30px;
+  }
+  .gap-\[50px\] {
+    gap: 50px;
   }
   .gap-\[57px\] {
     gap: 57px;
+  }
+  .truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .overflow-hidden {
     overflow: hidden;
@@ -349,6 +416,9 @@
   }
   .rounded-\[25px\] {
     border-radius: 25px;
+  }
+  .rounded-\[50px\] {
+    border-radius: 50px;
   }
   .border {
     border-style: var(--tw-border-style);
@@ -362,14 +432,17 @@
     --tw-border-style: solid;
     border-style: solid;
   }
-  .bg-\[\#F2FEE1\] {
-    background-color: #F2FEE1;
+  .bg-\[\#C14600\] {
+    background-color: #C14600;
+  }
+  .bg-\[\#FEF9E1\] {
+    background-color: #FEF9E1;
+  }
+  .bg-\[\#FF9D23\] {
+    background-color: #FF9D23;
   }
   .bg-white {
     background-color: var(--color-white);
-  }
-  .bg-\[url\(\'\/images\/cardboard\.png\'\)\] {
-    background-image: url('/images/cardboard.png');
   }
   .object-cover {
     -o-object-fit: cover;
@@ -378,14 +451,26 @@
   .p-1 {
     padding: calc(var(--spacing) * 1);
   }
+  .p-5 {
+    padding: calc(var(--spacing) * 5);
+  }
+  .p-\[20px\] {
+    padding: 20px;
+  }
   .px-\[160px\] {
     padding-inline: 160px;
+  }
+  .pt-\[-10px\] {
+    padding-top: -10px;
   }
   .pr-4 {
     padding-right: calc(var(--spacing) * 4);
   }
   .pl-5 {
     padding-left: calc(var(--spacing) * 5);
+  }
+  .text-center {
+    text-align: center;
   }
   .font-\[Inter\] {
     font-family: Inter;
@@ -412,6 +497,18 @@
     --tw-leading: calc(var(--spacing) * 10);
     line-height: calc(var(--spacing) * 10);
   }
+  .leading-none {
+    --tw-leading: 1;
+    line-height: 1;
+  }
+  .leading-normal {
+    --tw-leading: var(--leading-normal);
+    line-height: var(--leading-normal);
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
   .font-extrabold {
     --tw-font-weight: var(--font-weight-extrabold);
     font-weight: var(--font-weight-extrabold);
@@ -436,6 +533,12 @@
     --tw-tracking: 1.1px;
     letter-spacing: 1.1px;
   }
+  .whitespace-pre-line {
+    white-space: pre-line;
+  }
+  .whitespace-pre-wrap {
+    white-space: pre-wrap;
+  }
   .text-\[\#4C4C4C\] {
     color: #4C4C4C;
   }
@@ -451,20 +554,14 @@
   .text-red-500 {
     color: var(--color-red-500);
   }
+  .text-white {
+    color: var(--color-white);
+  }
   .opacity-0 {
     opacity: 0%;
   }
-  .opacity-10 {
-    opacity: 10%;
-  }
-  .opacity-20 {
-    opacity: 20%;
-  }
   .opacity-50 {
     opacity: 50%;
-  }
-  .opacity-100 {
-    opacity: 100%;
   }
   .mix-blend-multiply {
     mix-blend-mode: multiply;
@@ -473,6 +570,13 @@
     -webkit-user-select: none;
     -moz-user-select: none;
          user-select: none;
+  }
+  .hover\:scale-\[1\.05\] {
+    &:hover {
+      @media (hover: hover) {
+        scale: 1.05;
+      }
+    }
   }
   .hover\:font-semibold {
     &:hover {
